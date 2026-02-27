@@ -1,0 +1,18 @@
+[project]
+name = "titanapi"
+version = "0.1.0"
+description = "AI-Native Production-Ready FastAPI Wrapper"
+authors = [{ name = "Tharuneswar Doddi" }]
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "pydantic-settings",
+    "typer"
+]
+
+[project.scripts]
+titanapi = "titanapi.cli:cli"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
