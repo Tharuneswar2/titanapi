@@ -1,4 +1,6 @@
 from fastapi import FastAPI
+from titanapi.tasks.registry import TaskRegistry
+from titanapi.tasks.decorator import TitanTask
 
 class TitanAPI:
     def __init__(
@@ -15,6 +17,8 @@ class TitanAPI:
             "ai": ai,
             "observability": observability,
         }
+        self.task_registry = TaskRegistry()
+        self.task = TitanTask(self.task_registry)
 
         if observability:
             self._setup_observability()
